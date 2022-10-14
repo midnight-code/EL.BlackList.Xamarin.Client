@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.BlackList.Views.DriverDetailsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title" FontAttributes="Bold" Text="Найден водитель" VerticalOptions="Center" HorizontalTextAlignment="Center" />
+
+                <ActivityIndicator BindingContext="{x:Reference imgAvtar}" IsRunning="{Binding Path=IsLoading}" Color="Red" AbsoluteLayout.LayoutBounds=".5,.5,100,100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <Image x:Name="imgAvtar" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" VerticalOptions="Start" WidthRequest="180" HeightRequest="180"/>
+                
+                <StackLayout Grid.Row="1" Grid.Column="1">
+                    <Label FontSize="Medium" Text="{Binding FirstName}" />
+                    <Label FontSize="Medium" Text="{Binding LastName}" />
+                    <Label FontSize="Medium" Text="{Binding SecondName}" />
+                    <Label FontSize="Medium" Text="Birthday: " />
+                    <Label x:Name="lblBithdey" FontSize="Medium"/>
+                </StackLayout>
+                <Grid BackgroundColor="White" Grid.Row="2" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout>
+                        <Label FontSize="Medium" FontAttributes="Bold" Text="Найдены записи" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                    <ListView x:Name="lstFeedBack" Grid.Row="1" ItemTapped="onItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Padding="5" Margin="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="80"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="85"></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding DateADD}" Grid.Row="0" Grid.Column="0"></Label>
+                                        <Label Text="{Binding Subjest}" Grid.Row="0" Grid.Column="1"></Label>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.Footer>
+                            <StackLayout>
+                                <Button x:Name="btnAdd" Text="Добавить" 
+                                        BackgroundColor="LightGreen" TextColor="White" FontAttributes="Bold" 
+                                        CornerRadius="30" WidthRequest="200" Margin="15,15,15,0"
+                                        Clicked="btnAdd_Clicked"/>
+                            </StackLayout>
+                        </ListView.Footer>
+                        
+                    </ListView>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

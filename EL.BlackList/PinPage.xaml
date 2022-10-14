@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.BlackList.PinPage"
+             Shell.FlyoutBehavior="Disabled" Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <StackLayout x:Name="NewPinCode">
+            <Label Text="Enter new pin code!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" TextColor="Black" />
+            <Button Text="text" Clicked="Button_Clicked"/>
+        </StackLayout>
+            <StackLayout x:Name="PinCode">
+            <Label Text="Enter pin code!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" TextColor="Black" />
+            <Button Text="text" Clicked="Button_Clicked"/>
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

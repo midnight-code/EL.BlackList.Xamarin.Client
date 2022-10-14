@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.BlackList.UserControl.EditorView">
+  <ContentView.Content>
+      <StackLayout Orientation="Vertical">
+            <Editor x:Name="editMessage" BackgroundColor="Aqua"></Editor>
+            <Button x:Name="btnEditer" Text="Редактировать2" BackgroundColor="LightGreen" TextColor="White" FontAttributes="Bold" CornerRadius="30" WidthRequest="200" Margin="15,15,15,0"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

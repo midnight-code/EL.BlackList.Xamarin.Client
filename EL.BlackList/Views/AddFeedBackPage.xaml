@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.BlackList.Views.AddFeedBackPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" x:Name="lblDate" HorizontalOptions="Center" />
+            <Label Grid.Row="0" Grid.Column="1" x:Name="lblTaxiPool" HorizontalOptions="Center" />
+            <Label Grid.Row="0" Grid.Column="2" x:Name="lblCity" HorizontalOptions="Center" />
+            <Label Grid.Row="1" Grid.ColumnSpan="3" x:Name="lblMessage" />
+            <Editor Grid.Row="1" Grid.ColumnSpan="3" x:Name="editMessage" TextColor="Black" AutoSize="TextChanges" />
+            <Button Grid.Row="2" Grid.ColumnSpan="3" x:Name="btnEdite" Text="Добавить" 
+                    BackgroundColor="LightGreen" TextColor="White" FontAttributes="Bold" 
+                    CornerRadius="30" WidthRequest="200" Margin="15,15,15,0"
+                    Clicked="btnAdd_Clicked"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

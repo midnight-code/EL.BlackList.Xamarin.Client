@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EL.BlackList.UserControl.PaymentView">
+  <ContentView.Content>
+      <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+          <Label Text="Оплата за текущий период просрочена. Пожалуйста оплатите в личном кабинете для продолжения пользования." />
+            <Button Text="Оплатить" Command="{Binding SaveCommand}"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>
