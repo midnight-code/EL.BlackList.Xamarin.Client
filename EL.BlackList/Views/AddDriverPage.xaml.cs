@@ -18,5 +18,10 @@ namespace EL.BlackList.Views
 			InitializeComponent ();
 			this.BindingContext = new AddDriverViewModel();
 		}
+
+		private void dateBithday_DateSelected(object sender, DateChangedEventArgs e)
+		{
+			EntrBirthday.Text=e.NewDate.ToString();
+		}
 	}
 }

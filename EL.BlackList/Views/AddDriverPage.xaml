@@ -68,8 +68,8 @@
                                 <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Entry x:Name="EntrBirthday" IsVisible="false" Text="{Binding Birthday}" Placeholder="Birthday" TextColor="Black" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                                <DatePicker x:Name="dateBithday" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" />
+                                <Entry x:Name="EntrBirthday" Text="{Binding Birthday}" Placeholder="Birthday" TextColor="Black" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                <DatePicker x:Name="dateBithday" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" DateSelected="dateBithday_DateSelected" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>
@@ -77,9 +77,9 @@
                         <Frame BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
                                 <Frame BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" Padding="0" Margin="5">
-                                    <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
+                                    <Image Source="{Binding ImagName}" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Button Text="Add Avatar" TextColor="White" BackgroundColor="LightGreen" FontAttributes="Bold" VerticalOptions="Center" CornerRadius="30" Margin="0,15,0,0" WidthRequest="200"/>
+                                <Button Text="Add Avatar" TextColor="White" BackgroundColor="LightGreen" FontAttributes="Bold" VerticalOptions="Center" CornerRadius="30" Margin="0,15,0,0" WidthRequest="200" Command="{Binding AddAvatar}" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>
