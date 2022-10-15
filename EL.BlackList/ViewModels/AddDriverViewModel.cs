@@ -58,9 +58,9 @@ namespace EL.BlackList.ViewModels
                     DataRogden = Convert.ToDateTime(Birthday),
                     BlackList = true,
                     INN = AddINN,
-                    PassportID = (idFile > 0) ? idFile : 1,
+                    PassportID = 1,
                     TaxiPoolID = users.TaxiPoolID,
-                    Avatar = 1,
+                    Avatar = (idFile > 0) ? idFile : 1,
                     DriverLicenseID = 1,
                     FeedBacks = null,
                     ID = 0
