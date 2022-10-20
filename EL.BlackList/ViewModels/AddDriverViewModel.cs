@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -23,6 +24,9 @@ namespace EL.BlackList.ViewModels
         public int AddINN { get; set; }
         public string ImagName { get; set; }
 
+        public DateTime MaxiDate { get; set; }
+        public DateTime EndDate { get; set; }
+
 
         public Command AddCommand { get; }
         public Command AddAvatar { get; }
@@ -35,6 +39,9 @@ namespace EL.BlackList.ViewModels
             AddCommand = new Command(OnAddDriverClicked);
             AddAvatar= new Command(OnAddAvatarClicked);
             ImagName = (file == null) ? "user.png" : file.FullPath;
+
+            EndDate= DateTime.Now.AddYears(-65);
+            MaxiDate = DateTime.Now.AddYears(-3);
         }
         private async void OnAddDriverClicked(object obj)
         {
@@ -48,8 +55,6 @@ namespace EL.BlackList.ViewModels
                 }
                 UserBase users = await App.BlackListDB.GetUserBaseAsync();
                 string token = "Bearer " + users.Token;
-
-                int idFile = Task.Run(()=> UploadFile(file, token)).Result;
                 driver = new DriverModel()
                 {
                     FirstName = AddFirstName,
@@ -60,7 +65,7 @@ namespace EL.BlackList.ViewModels
                     INN = AddINN,
                     PassportID = 1,
                     TaxiPoolID = users.TaxiPoolID,
-                    Avatar = (idFile > 0) ? idFile : 1,
+                    Avatar = (file != null) ? Task.Run(() => UploadFile(file, token)).Result : 1,
                     DriverLicenseID = 1,
                     FeedBacks = null,
                     ID = 0
@@ -75,7 +80,12 @@ namespace EL.BlackList.ViewModels
                         {
                             string contents = await response.Content.ReadAsStringAsync();
                             int id= Convert.ToInt32(contents);
+                            driver.ID = id;
+                            List<DriverModel> list = new List<DriverModel>();
+                            list.Add(driver);
+                            string ret = JsonSerializer.Serialize<List<DriverModel>>(list);
                             await Shell.Current.DisplayAlert("Completed successfully", "Driver save success! ", "OK");
+                            await Shell.Current.GoToAsync($"{nameof(DriverDetailsPage)}?{nameof(DriverDetailsPage.driverModels)}={ret}");
                         }
                         else
                         {
@@ -95,7 +105,9 @@ namespace EL.BlackList.ViewModels
             if (file == null)
                 return;
             else
+            {
                 ImagName = file.FullPath;
+            }
             
         }
 

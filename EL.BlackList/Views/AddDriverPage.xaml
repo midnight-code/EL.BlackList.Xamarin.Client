@@ -69,7 +69,8 @@
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
                                 <Entry x:Name="EntrBirthday" Text="{Binding Birthday}" Placeholder="Birthday" TextColor="Black" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                                <DatePicker x:Name="dateBithday" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" DateSelected="dateBithday_DateSelected" />
+                                <DatePicker x:Name="dateBithday" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" DateSelected="dateBithday_DateSelected"
+                                            MinimumDate="{Binding EndDate}" MaximumDate="{Binding MaxiDate}"/>
                             </StackLayout>
                         </Frame>
                     </StackLayout>
