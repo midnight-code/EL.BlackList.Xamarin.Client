@@ -5,6 +5,12 @@
              xmlns:vm="clr-namespace:EL.BlackList.ViewModels"
              Shell.FlyoutBehavior="Disabled"
              Title="{Binding Title}">
+
+    <Shell.TitleView>
+        <Label Text="Оплата" TextColor="#FFFF00" FontSize="30"
+       FontFamily="BLAGO"  Margin="0,15,0,0" />
+    </Shell.TitleView>
+    
     <ContentPage.BindingContext>
         <vm:PaymentPageViewModel />
     </ContentPage.BindingContext>

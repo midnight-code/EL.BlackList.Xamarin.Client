@@ -2,9 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EL.BlackList.PinPage"
-             Shell.FlyoutBehavior="Disabled" Shell.NavBarIsVisible="False">
+             Shell.FlyoutBehavior="Disabled" Shell.NavBarIsVisible="False"
+             BackgroundColor="Black">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <StackLayout>
+                <Label Text="Balck List" TextColor="#FFFF00" FontSize="125"
+                       FontFamily="MagicSchool" />
+                <Frame Padding="0" Margin="0,0,0,0" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent">
+                    <Image Source="car1.png" Aspect="AspectFill" Margin="0"/>
+                </Frame>
+            </StackLayout>
             <StackLayout x:Name="NewPinCode">
             <Label Text="Enter new pin code!"
                 VerticalOptions="CenterAndExpand" 

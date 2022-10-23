@@ -35,7 +35,7 @@ namespace EL.BlackList.ViewModels
 
         public AddDriverViewModel()
         {
-            Title = "Home";
+            Title = "Добавить водителя";
             AddCommand = new Command(OnAddDriverClicked);
             AddAvatar= new Command(OnAddAvatarClicked);
             ImagName = (file == null) ? "user.png" : file.FullPath;

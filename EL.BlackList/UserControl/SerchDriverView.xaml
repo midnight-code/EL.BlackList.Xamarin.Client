@@ -8,17 +8,17 @@
     </ContentView.BindingContext>
   <ContentView.Content>
         <ScrollView>
-            <Grid BackgroundColor="White">
+            <Grid BackgroundColor="Black">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="220"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
                 <StackLayout>
-                    <Frame BackgroundColor="SkyBlue" HeightRequest="60" WidthRequest="60" CornerRadius="50" Padding="0" Margin="0,100,0,0" HorizontalOptions="Center">
+                    <Frame BackgroundColor="#FFFF00" HeightRequest="60" WidthRequest="60" CornerRadius="50" Padding="0" Margin="0,100,0,0" HorizontalOptions="Center">
                         <Image Source="avatar.png" Aspect="AspectFill" Margin="0"/>
                     </Frame>
-                    <Label Text="Inter serch driver name! " HorizontalOptions="Center" TextColor="Black" FontSize="Title" FontAttributes="Bold" Padding="0" Margin="0"/>
+                    <Label Text="Поиск в базе." HorizontalOptions="Center" TextColor="#FFFF00" FontSize="Title" FontAttributes="Bold" Padding="0" Margin="0" FontFamily="BLAGO"/>
                 </StackLayout>
                 <Grid RowSpacing="5" Grid.Row="1" Margin="20,20,20,0">
                     <Grid.RowDefinitions>
@@ -31,40 +31,40 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                        <Frame BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <Frame BackgroundColor="Transparent" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
-                                <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
+                                <Frame BackgroundColor="#FFFF00" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Entry Text="{Binding FirstName}" Placeholder="FirstName" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" PlaceholderColor="DarkGray"/>
+                                <Entry Text="{Binding FirstName}" Placeholder="Фамилия" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" PlaceholderColor="DarkGray"/>
                             </StackLayout>
                         </Frame>
-                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
-                                <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
+                                <Frame BackgroundColor="#FFFF00" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Entry Text="{Binding LastName}" Placeholder="LastName" TextColor="Black" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                <Entry Text="{Binding LastName}" Placeholder="Имя" TextColor="White" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                             </StackLayout>
                         </Frame>
-                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
-                                <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
+                                <Frame BackgroundColor="#FFFF00" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Entry Text="{Binding SecondName}" Placeholder="SecondName" TextColor="Black" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                <Entry Text="{Binding SecondName}" Placeholder="Отчество" TextColor="White" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                             </StackLayout>
                         </Frame>
-                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30" IsVisible="False">
                             <StackLayout Orientation="Horizontal">
                                 <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
                                 <Entry x:Name="EntrBirthday" IsVisible="false" Text="{Binding Birthday}" Placeholder="Birthday" TextColor="Black" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                                <DatePicker x:Name="dateBithday" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" DateSelected="dateBithday_DateSelected" />
+                                <DatePicker x:Name="dateBithday" TextColor="#FFFF00" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" DateSelected="dateBithday_DateSelected" />
                             </StackLayout>
                         </Frame>
-                        <Button Text="Serch driver" BackgroundColor="LightGreen" TextColor="White" FontAttributes="Bold" CornerRadius="30" WidthRequest="200" Margin="0,15,0,0" Command="{Binding SerchCommand}"/>
+                        <Button Text="Найти в базе" BackgroundColor="#FFFF00" TextColor="Black" FontFamily="BLAGO" FontSize="20" FontAttributes="Bold" CornerRadius="30" WidthRequest="200" Margin="0,15,0,0" Command="{Binding SerchCommand}"/>
                     </StackLayout>
                 </Grid>
             </Grid>

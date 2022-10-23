@@ -2,13 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EL.BlackList.Views.AddDriverPage"
-             xmlns:vm="clr-namespace:EL.BlackList.ViewModels">
+             xmlns:vm="clr-namespace:EL.BlackList.ViewModels"
+             BackgroundColor="Black">
+
+    <Shell.TitleView>
+        <Label Text="{Binding Title}" TextColor="#FFFF00" FontSize="30"
+       FontFamily="BLAGO"  Margin="0,5,0,0" />
+    </Shell.TitleView>
+    
     <ContentPage.BindingContext>
         <vm:AddDriverViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
-            <Grid BackgroundColor="White">
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="220"/>
                     <RowDefinition Height="*"/>
@@ -18,7 +25,7 @@
                     <Frame BackgroundColor="SkyBlue" HeightRequest="60" WidthRequest="60" CornerRadius="50" Padding="0" Margin="0,100,0,0" HorizontalOptions="Center">
                         <Image Source="avatar.png" Aspect="AspectFill" Margin="0"/>
                     </Frame>
-                    <Label Text="Inter new driver in black list! " HorizontalOptions="Center" TextColor="Black" FontSize="Title" FontAttributes="Bold" Padding="0" Margin="0"/>
+                    <Label Text="Добавить новую запись! " HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold" Padding="0" Margin="0" FontFamily="BLAGO"/>
                 </StackLayout>
                 <Grid RowSpacing="5" Grid.Row="1" Margin="20,20,20,0">
                     <Grid.RowDefinitions>
@@ -31,45 +38,45 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                        <Frame BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <Frame BackgroundColor="Transparent" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
                                 <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Entry Text="{Binding AddFirstName}" Placeholder="FirstName" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" PlaceholderColor="DarkGray"/>
+                                <Entry Text="{Binding AddFirstName}" Placeholder="Фамилия" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" PlaceholderColor="DarkGray"/>
                             </StackLayout>
                         </Frame>
-                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
                                 <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Entry Text="{Binding AddLastName}" Placeholder="LastName" TextColor="Black" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                <Entry Text="{Binding AddLastName}" Placeholder="Имя" TextColor="White" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                             </StackLayout>
                         </Frame>
-                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
                                 <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Entry Text="{Binding AddSecondName}" Placeholder="SecondName" TextColor="Black" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                <Entry Text="{Binding AddSecondName}" Placeholder="Отчество" TextColor="White" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                             </StackLayout>
                         </Frame>
-                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
                                 <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Entry Text="{Binding AddINN}" Placeholder="INN" TextColor="Black" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                <Entry Text="{Binding AddINN}" Placeholder="ИНН" TextColor="White" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                             </StackLayout>
                         </Frame>
-                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
                                 <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Entry x:Name="EntrBirthday" Text="{Binding Birthday}" Placeholder="Birthday" TextColor="Black" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                                <DatePicker x:Name="dateBithday" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" DateSelected="dateBithday_DateSelected"
+                                <Entry x:Name="EntrBirthday" Text="{Binding Birthday}" Placeholder="Дата рождения" TextColor="Black" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                <DatePicker x:Name="dateBithday" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" DateSelected="dateBithday_DateSelected"
                                             MinimumDate="{Binding EndDate}" MaximumDate="{Binding MaxiDate}"/>
                             </StackLayout>
                         </Frame>
@@ -80,7 +87,7 @@
                                 <Frame BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" Padding="0" Margin="5">
                                     <Image Source="{Binding ImagName}" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Button Text="Add Avatar" TextColor="White" BackgroundColor="LightGreen" FontAttributes="Bold" VerticalOptions="Center" CornerRadius="30" Margin="0,15,0,0" WidthRequest="200" Command="{Binding AddAvatar}" />
+                                <Button Text="Добавить фото" TextColor="Black" BackgroundColor="#FFFF00" FontFamily="BLAGO" FontAttributes="Bold" VerticalOptions="Center" CornerRadius="30" Margin="0,15,0,0" WidthRequest="200" Command="{Binding AddAvatar}" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>
@@ -90,12 +97,12 @@
                                 <Frame BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Button Text="Add driver license" TextColor="White" BackgroundColor="LightGreen" FontAttributes="Bold" VerticalOptions="Center" CornerRadius="30" Margin="0,15,0,0" WidthRequest="200"/>
+                                <Button Text="Водительское удостоверение" TextColor="Black" BackgroundColor="#FFFF00" FontFamily="BLAGO" FontAttributes="Bold" VerticalOptions="Center" CornerRadius="30" Margin="0,15,0,0" WidthRequest="200"/>
                             </StackLayout>
                         </Frame>
                     </StackLayout>
                     <StackLayout Grid.Row="3" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                        <Button Text="Add new driver in black list" HorizontalOptions="FillAndExpand" BackgroundColor="LightGreen" TextColor="White" FontAttributes="Bold" CornerRadius="30" WidthRequest="300" Margin="0,15,0,0" Command="{Binding AddCommand}"/>
+                        <Button Text="Сохранить запись" HorizontalOptions="FillAndExpand" BackgroundColor="#FFFF00" FontFamily="BLAGO" TextColor="Black" FontAttributes="Bold" CornerRadius="30" WidthRequest="300" Margin="0,15,0,0" Command="{Binding AddCommand}"/>
                     </StackLayout>
                 </Grid>
             </Grid>

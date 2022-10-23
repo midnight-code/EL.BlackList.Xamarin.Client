@@ -1,63 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EL.BlackList.Views.DriverDetailsPage">
+             x:Class="EL.BlackList.Views.DriverDetailsPage"
+             BackgroundColor="Black">
+
+    <Shell.TitleView>
+        <Label Text="Найден водитель" TextColor="#FFFF00" FontSize="30"
+       FontFamily="BLAGO"  Margin="0,5,0,0" />
+    </Shell.TitleView>
+    
     <ContentPage.Content>
         <ScrollView>
-            <Grid BackgroundColor="White">
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="180"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="Title" FontAttributes="Bold" Text="Найден водитель" VerticalOptions="Center" HorizontalTextAlignment="Center" />
 
                 <ActivityIndicator BindingContext="{x:Reference imgAvtar}" IsRunning="{Binding Path=IsLoading}" Color="Red" AbsoluteLayout.LayoutBounds=".5,.5,100,100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                 <Image x:Name="imgAvtar" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" VerticalOptions="Start" WidthRequest="180" HeightRequest="180"/>
                 
                 <StackLayout Grid.Row="1" Grid.Column="1">
-                    <Label FontSize="Medium" Text="{Binding FirstName}" />
-                    <Label FontSize="Medium" Text="{Binding LastName}" />
-                    <Label FontSize="Medium" Text="{Binding SecondName}" />
-                    <Label FontSize="Medium" Text="Birthday: " />
-                    <Label x:Name="lblBithdey" FontSize="Medium"/>
+                    <Label FontSize="Medium" Text="{Binding FirstName}" TextColor="White" />
+                    <Label FontSize="Medium" Text="{Binding LastName}" TextColor="White" />
+                    <Label FontSize="Medium" Text="{Binding SecondName}" TextColor="White" />
+                    <Label FontSize="Medium" Text="Дата рождения: " TextColor="White" FontFamily="BLAGO" />
+                    <Label x:Name="lblBithdey" FontSize="Medium" TextColor="White"/>
                 </StackLayout>
-                <Grid BackgroundColor="White" Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid Grid.Row="2" Grid.ColumnSpan="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <StackLayout>
-                        <Label FontSize="Medium" FontAttributes="Bold" Text="Найдены записи" HorizontalTextAlignment="Center" />
+                        <Label FontSize="Medium" FontAttributes="Bold" Text="Найдены записи:" HorizontalTextAlignment="Center" FontFamily="BLAGO" Margin="0,15,0,0" />
                     </StackLayout>
-                    <ListView x:Name="lstFeedBack" Grid.Row="1" ItemTapped="onItemSelected">
+                    <ListView x:Name="lstFeedBack" Grid.Row="1" ItemTapped="onItemSelected" SeparatorColor="#FFFF00">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
                                     <Grid Padding="5" Margin="10">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="80"></RowDefinition>
+                                            <RowDefinition Height="105"></RowDefinition>
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="85"></ColumnDefinition>
+                                            <ColumnDefinition Width="99"></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
-                                        <Label Text="{Binding DateADD}" Grid.Row="0" Grid.Column="0"></Label>
-                                        <Label Text="{Binding Subjest}" Grid.Row="0" Grid.Column="1"></Label>
+                                        <Label Text="{Binding DateADD}" Grid.Row="0" Grid.Column="0" TextColor="White" FontSize="16"></Label>
+                                        <Label Text="{Binding Subjest}" Grid.Row="0" Grid.Column="1" TextColor="White" FontSize="16"></Label>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                         <ListView.Footer>
                             <StackLayout>
-                                <Button x:Name="btnAdd" Text="Добавить" 
-                                        BackgroundColor="LightGreen" TextColor="White" FontAttributes="Bold" 
-                                        CornerRadius="30" WidthRequest="200" Margin="15,15,15,0"
+                                <Button x:Name="btnAdd" Text="Добавить" FontFamily="BLAGO"
+                                        BackgroundColor="#FFFF00" TextColor="Black" FontAttributes="Bold" 
+                                        CornerRadius="30" WidthRequest="200" Margin="15,15,15,0" FontSize="20"
                                         Clicked="btnAdd_Clicked"/>
                             </StackLayout>
                         </ListView.Footer>

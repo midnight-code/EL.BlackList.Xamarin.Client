@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EL.BlackList.Views.FeedBackDetailsPage">
+             x:Class="EL.BlackList.Views.FeedBackDetailsPage"
+             BackgroundColor="Black">
+
+    <Shell.TitleView>
+        <Label Text="Отзыв в деталях" TextColor="#FFFF00" FontSize="30"
+       FontFamily="BLAGO"  Margin="0,5,0,0" />
+    </Shell.TitleView>
     
     <ContentPage.Content>
         <Grid>
@@ -20,9 +26,9 @@
             <Label Grid.Row="0" Grid.Column="1" x:Name="lblTaxiPool" HorizontalOptions="Center" />
             <Label Grid.Row="0" Grid.Column="2" x:Name="lblCity" HorizontalOptions="Center" />
             <Label Grid.Row="1" Grid.ColumnSpan="3" x:Name="lblMessage" />
-            <Editor Grid.Row="1" Grid.ColumnSpan="3" x:Name="editMessage" TextColor="Black" AutoSize="TextChanges" />
+            <Editor Grid.Row="1" Grid.ColumnSpan="3" x:Name="editMessage" TextColor="White" AutoSize="TextChanges" />
             <Button Grid.Row="2" Grid.ColumnSpan="3" x:Name="btnEdite" Text="Редактировать" 
-                    BackgroundColor="LightGreen" TextColor="White" FontAttributes="Bold" 
+                    BackgroundColor="#FFFF00" TextColor="Black" FontAttributes="Bold" FontFamily="BLAGO" FontSize="20"
                     CornerRadius="30" WidthRequest="200" Margin="15,15,15,0"
                     Clicked="btnEdite_Clicked"/>
             

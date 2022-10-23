@@ -6,8 +6,11 @@
        xmlns:model="clr-namespace:EL.BlackList.Models"
        Title="Black List"
        x:Class="EL.BlackList.AppShell"
-       Shell.TabBarIsVisible="False">
+       Shell.TabBarIsVisible="False"
+       Shell.BackgroundColor="Black">
 
+    
+    
     <ShellContent
         Title="Login out"
         ContentTemplate="{DataTemplate local:StartPage}"

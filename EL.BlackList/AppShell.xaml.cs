@@ -16,8 +16,6 @@ namespace EL.BlackList
 
             Routing.RegisterRoute(nameof(StartPage), typeof(StartPage));
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             Routing.RegisterRoute(nameof(PinPage), typeof(PinPage));
             Routing.RegisterRoute(nameof(DriverDetailsPage), typeof(DriverDetailsPage));
             Routing.RegisterRoute(nameof(FeedBackDetailsPage), typeof(FeedBackDetailsPage));

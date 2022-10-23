@@ -3,8 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EL.BlackList.Views.AboutPage"
              xmlns:vm="clr-namespace:EL.BlackList.ViewModels"
-             Title="{Binding Title}">
-    
+             BackgroundColor="Black">
+
+    <Shell.TitleView>
+        <Label Text="О программе" TextColor="#FFFF00" FontSize="30"
+       FontFamily="BLAGO"  Margin="0,5,0,0" />
+    </Shell.TitleView>
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
