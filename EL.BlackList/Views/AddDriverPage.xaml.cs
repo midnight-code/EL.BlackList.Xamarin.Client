@@ -10,7 +10,6 @@ using Xamarin.Forms.Xaml;
 
 namespace EL.BlackList.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddDriverPage : ContentPage
 	{
 		public AddDriverPage ()

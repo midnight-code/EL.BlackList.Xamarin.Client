@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EL.BlackList.UserControl.FlyoutHeaderControl">
+             x:Class="EL.BlackList.UserControl.FlyoutHeaderControl"
+             BackgroundColor="Black">
   <ContentView.Content>
         <StackLayout Padding="10" Orientation="Vertical">
-            <Label x:Name="lblUserName" FontSize="20" FontAttributes="Bold" TextColor="Black"/>
-            <Label x:Name="lblEmail" FontSize="16" TextColor="Black"/>
-            <Label x:Name="lblPayment" TextColor="Black"/>
+            <Label x:Name="lblUserName" FontSize="20" FontAttributes="Bold" TextColor="White" FontFamily="BLAGO"/>
+            <Label x:Name="lblEmail" FontSize="16" TextColor="White" FontFamily="BLAGO"/>
+            <Label x:Name="lblPayment" TextColor="White" FontFamily="BLAGO"/>
         </StackLayout>
     </ContentView.Content>
 </ContentView>

@@ -26,11 +26,13 @@ namespace EL.BlackList.UserControl
             PaymentUserModel model = await App.PaymentUserDB.GetPaymentUserByUserId();
             if (!string.IsNullOrWhiteSpace(users.UserID) && !string.IsNullOrWhiteSpace(users.FirstName))
             {
-                lblUserName.Text = $"Logged in as: {users.FirstName} {users.LastName.ElementAt(0)}. {users.SecondName.ElementAt(0)}.  ";
+                lblUserName.Text = $"{users.FirstName} {users.LastName.ElementAt(0)}. {users.SecondName.ElementAt(0)}.  ";
+                lblEmail.Text = users.NameCompPublic;
             }
             if (model != null)
             {
                 lblPayment.Text = $"Дата следующего платежа: {model.DatePayment.AddDays(model.PeriodPayment).ToShortDateString()}";
+                
             }
             else
             {

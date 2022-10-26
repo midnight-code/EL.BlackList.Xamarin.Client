@@ -2,6 +2,7 @@
 using EL.BlackList.Views;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -14,15 +15,77 @@ using Xamarin.Forms;
 
 namespace EL.BlackList.ViewModels
 {
-    public class AddDriverViewModel : BaseViewModel
+    public class AddDriverViewModel : INotifyPropertyChanged
     {
+        
+        string imgpatch = "";
+        string driverlicense1;
+        string driverlicense2;
         DriverModel driver;
+        bool _isTaskRunning = false;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        
         public string AddFirstName { get; set; }
         public string AddLastName { get; set; }
         public string AddSecondName { get; set; }
         public string Birthday { get; set; }
         public int AddINN { get; set; }
-        public string ImagName { get; set; }
+
+        public bool isTaskRunning 
+        {
+            get { return _isTaskRunning; }
+            set
+            {
+                if(_isTaskRunning != value)
+                {
+                    _isTaskRunning = value;
+                    OnPropertyChanged("isTaskRunning");
+                }
+            } 
+        }
+
+        public string ImagName 
+        {
+            get { return imgpatch; }
+            set
+            {
+                if(imgpatch!= value)
+                {
+                    imgpatch = value;
+                    SetNewImage(value);
+                    OnPropertyChanged("ImagName");
+                }
+            }
+        }
+        public string ImagDriverLicense1
+        {
+            get { return driverlicense1; }
+            set
+            {
+                if (driverlicense1 != value)
+                {
+                    driverlicense1 = value;
+                    OnPropertyChanged("ImagDriverLicense1");
+                }
+            }
+        }
+
+        public string ImagDriverLicense2
+        {
+            get { return driverlicense2; }
+            set
+            {
+                if (driverlicense2 != value)
+                {
+                    driverlicense2 = value;
+                    OnPropertyChanged("ImagDriverLicense2");
+                }
+            }
+        }
+
+
 
         public DateTime MaxiDate { get; set; }
         public DateTime EndDate { get; set; }
@@ -30,21 +93,33 @@ namespace EL.BlackList.ViewModels
 
         public Command AddCommand { get; }
         public Command AddAvatar { get; }
-        public FileResult file { get; set; }
+        public Command AddDriverLicenc1 { get; }
+        public Command AddDriverLicenc2 { get; }
+        public FileResult[] file { get; set; } 
 
 
         public AddDriverViewModel()
         {
-            Title = "Добавить водителя";
             AddCommand = new Command(OnAddDriverClicked);
             AddAvatar= new Command(OnAddAvatarClicked);
-            ImagName = (file == null) ? "user.png" : file.FullPath;
+            AddDriverLicenc1 = new Command(OnAddDriverLicense1Clicked);
+            AddDriverLicenc2 = new Command(OnAddDriverLicense2Clicked);
+            file = new FileResult[3];
+            isTaskRunning =false;
+            AddFirstName = String.Empty;
+            AddLastName = String.Empty;
+            AddSecondName = String.Empty;
+            ImagName = (file[0] == null) ? "user.png" : file[0].FullPath;
 
             EndDate= DateTime.Now.AddYears(-65);
             MaxiDate = DateTime.Now.AddYears(-3);
         }
         private async void OnAddDriverClicked(object obj)
         {
+
+            isTaskRunning = !isTaskRunning;
+
+
             if (string.IsNullOrWhiteSpace(AddFirstName) || string.IsNullOrWhiteSpace(AddLastName) || string.IsNullOrEmpty(Birthday))
                 await Shell.Current.DisplayAlert("Error", "Все поля отмеченные * должны быть заполненны.", "OK");
             else
@@ -65,8 +140,8 @@ namespace EL.BlackList.ViewModels
                     INN = AddINN,
                     PassportID = 1,
                     TaxiPoolID = users.TaxiPoolID,
-                    Avatar = (file != null) ? Task.Run(() => UploadFile(file, token)).Result : 1,
-                    DriverLicenseID = 1,
+                    Avatar = (file[0] != null) ? Task.Run(() => UploadFile(file[0], token)).Result : 1,
+                    DriverLicenseID = 1,//реализовать запись в базу фото лицензий
                     FeedBacks = null,
                     ID = 0
                 };
@@ -100,17 +175,51 @@ namespace EL.BlackList.ViewModels
 
         private async void OnAddAvatarClicked(object obj)
         {
-            file = await MediaPicker.PickPhotoAsync();
+            file[0] = await MediaPicker.PickPhotoAsync();
 
             if (file == null)
                 return;
             else
             {
-                ImagName = file.FullPath;
+                ImagName = file[0].FullPath;
+                
             }
             
         }
+        private async void OnAddDriverLicense1Clicked(object obj)
+        {
+            file[1] = await MediaPicker.PickPhotoAsync();
 
+            if (file == null)
+                return;
+            else
+            {
+                driverlicense1 = file[1].FullPath;
+
+            }
+
+        }
+        private async void OnAddDriverLicense2Clicked(object obj)
+        {
+            file[2] = await MediaPicker.PickPhotoAsync();
+
+            if (file == null)
+                return;
+            else
+            {
+                driverlicense2 = file[2].FullPath;
+
+            }
+
+        }
+        protected void SetNewImage(string value)
+        {
+            ImagName = value;
+        }
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         private async Task<int> UploadFile(FileResult fileResult, string token)
         {
             using (var multipartFormContent = new MultipartFormDataContent())

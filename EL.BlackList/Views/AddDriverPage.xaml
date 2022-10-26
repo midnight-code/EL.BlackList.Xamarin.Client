@@ -6,7 +6,7 @@
              BackgroundColor="Black">
 
     <Shell.TitleView>
-        <Label Text="{Binding Title}" TextColor="#FFFF00" FontSize="30"
+        <Label Text="Новая запись" TextColor="#FFFF00" FontSize="30"
        FontFamily="BLAGO"  Margin="0,5,0,0" />
     </Shell.TitleView>
     
@@ -14,33 +14,25 @@
         <vm:AddDriverViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <ScrollView>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="220"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
-                <StackLayout>
-                    <Frame BackgroundColor="SkyBlue" HeightRequest="60" WidthRequest="60" CornerRadius="50" Padding="0" Margin="0,100,0,0" HorizontalOptions="Center">
-                        <Image Source="avatar.png" Aspect="AspectFill" Margin="0"/>
-                    </Frame>
-                    <Label Text="Добавить новую запись! " HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold" Padding="0" Margin="0" FontFamily="BLAGO"/>
-                </StackLayout>
-                <Grid RowSpacing="5" Grid.Row="1" Margin="20,20,20,0">
+        
+            <StackLayout Spacing="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                <ScrollView>
+                    <Grid Margin="0,30,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="90"/>
                     </Grid.RowDefinitions>
                     <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                         <Frame BackgroundColor="Transparent" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
-                                <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
+                                <Frame BackgroundColor="White" HeightRequest="45" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
                                 <Entry Text="{Binding AddFirstName}" Placeholder="Фамилия" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" PlaceholderColor="DarkGray"/>
@@ -48,7 +40,7 @@
                         </Frame>
                         <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
-                                <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
+                                <Frame BackgroundColor="White" HeightRequest="45" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
                                 <Entry Text="{Binding AddLastName}" Placeholder="Имя" TextColor="White" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
@@ -56,7 +48,7 @@
                         </Frame>
                         <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
-                                <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
+                            <Frame BackgroundColor="White" HeightRequest="45" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                     <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
                                 <Entry Text="{Binding AddSecondName}" Placeholder="Отчество" TextColor="White" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
@@ -64,19 +56,23 @@
                         </Frame>
                         <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                             <StackLayout Orientation="Horizontal">
-                                <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
-                                    <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
+                                <Frame BackgroundColor="Transparent" HeightRequest="50" WidthRequest="70" CornerRadius="30" Padding="0" Margin="5,9,0,0">
+                                    <Image Source="innwhite.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Entry Text="{Binding AddINN}" Placeholder="ИНН" TextColor="White" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                <Entry Text="{Binding AddINN}" Placeholder="ИНН" TextColor="White" PlaceholderColor="DarkGray" FontAttributes="Bold"
+                                       VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"
+                                       ClearButtonVisibility="WhileEditing" MaxLength="12" Keyboard="Numeric"
+                                       />
                             </StackLayout>
                         </Frame>
-                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="#FFFF00" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <Frame BackgroundColor="Transparent" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand">
                             <StackLayout Orientation="Horizontal">
-                                <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
-                                    <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
+                            <Frame HeightRequest="40" WidthRequest="30" Padding="5" Margin="5,0,0,0">
+                                    <Image Source="icon_calendar.png" Aspect="AspectFill" Margin="0"/>
                                 </Frame>
-                                <Entry x:Name="EntrBirthday" Text="{Binding Birthday}" Placeholder="Дата рождения" TextColor="Black" PlaceholderColor="DarkGray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                                <DatePicker x:Name="dateBithday" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" DateSelected="dateBithday_DateSelected"
+                            <Label Text="Дата рождения:" FontFamily="BLAGO" TextColor="#FFFF00" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="10,0,20,0"/>
+                            <Entry x:Name="EntrBirthday" Text="{Binding Birthday}" IsVisible="false"/>
+                            <DatePicker x:Name="dateBithday" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" DateSelected="dateBithday_DateSelected"
                                             MinimumDate="{Binding EndDate}" MaximumDate="{Binding MaxiDate}"/>
                             </StackLayout>
                         </Frame>
@@ -92,20 +88,46 @@
                         </Frame>
                     </StackLayout>
                     <StackLayout Grid.Row="2" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                        <Frame BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <Frame BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
                             <StackLayout Orientation="Horizontal">
-                                <Frame BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" Padding="0" Margin="5">
-                                    <Image Source="user.png" Aspect="AspectFill" Margin="0"/>
-                                </Frame>
-                                <Button Text="Водительское удостоверение" TextColor="Black" BackgroundColor="#FFFF00" FontFamily="BLAGO" FontAttributes="Bold" VerticalOptions="Center" CornerRadius="30" Margin="0,15,0,0" WidthRequest="200"/>
+                                <Label Text="Водительское удостоверение" HorizontalOptions="Center" FontSize="19" FontAttributes="Bold" Padding="0" Margin="0" FontFamily="BLAGO"/>
                             </StackLayout>
                         </Frame>
                     </StackLayout>
                     <StackLayout Grid.Row="3" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                        <Button Text="Сохранить запись" HorizontalOptions="FillAndExpand" BackgroundColor="#FFFF00" FontFamily="BLAGO" TextColor="Black" FontAttributes="Bold" CornerRadius="30" WidthRequest="300" Margin="0,15,0,0" Command="{Binding AddCommand}"/>
+                        <Frame BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Vertical">
+                                <Frame BackgroundColor="Transparent" HeightRequest="255" Padding="0" Margin="5">
+                                    <ImageButton Source="dl1.png" 
+                                                 Aspect="AspectFill" Margin="0" BackgroundColor="Transparent"/>
+                                </Frame>
+                                <Button Text="Лицевая сторона" HorizontalOptions="FillAndExpand" BackgroundColor="#FFFF00" FontFamily="BLAGO"
+                                        TextColor="Black" FontAttributes="Bold" CornerRadius="30" WidthRequest="200" Margin="0,15,0,0" Command="{Binding AddDriverLicenc1}"/>
+                                <Frame BackgroundColor="Transparent" HeightRequest="255" Padding="0" Margin="5">
+                                    <ImageButton Source="dl2.png" Aspect="AspectFill" Margin="0" BackgroundColor="Transparent"/>
+                                </Frame>
+                                <Button Text="Обратная сторона" HorizontalOptions="FillAndExpand" BackgroundColor="#FFFF00" FontFamily="BLAGO" TextColor="Black" 
+                                        FontAttributes="Bold" CornerRadius="30" WidthRequest="200" Margin="0,15,0,0" Command="{Binding AddDriverLicenc2}"/>
+                            </StackLayout>
+                        </Frame>
                     </StackLayout>
-                </Grid>
-            </Grid>
-        </ScrollView>
+                    <StackLayout Grid.Row="4" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Сохранить запись" HorizontalOptions="FillAndExpand" BackgroundColor="#FFFF00" FontFamily="BLAGO" TextColor="Black" FontAttributes="Bold" 
+                                CornerRadius="30" WidthRequest="400" Margin="0,15,0,0" Command="{Binding AddCommand}"/>
+                    </StackLayout>
+                    </Grid>
+                </ScrollView>
+
+                <AbsoluteLayout VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding isTaskRunning}" BackgroundColor="LightGray" WidthRequest="400" HeightRequest="600" Opacity="0.7">
+
+                        <ActivityIndicator IsRunning="{Binding isTaskRunning}" Color="Red" AbsoluteLayout.LayoutBounds=".5,.5,100,100"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional" />
+                    </AbsoluteLayout>
+                </Grid>    
+                
+            </StackLayout>
+        
+        
+
     </ContentPage.Content>
 </ContentPage>

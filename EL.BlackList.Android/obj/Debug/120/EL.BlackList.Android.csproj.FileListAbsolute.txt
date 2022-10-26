@@ -1396,3 +1396,9 @@ F:\Projects2022\BlackList\BlackListXamarin\EL.BlackList\EL.BlackList.Android\obj
 F:\Projects2022\BlackList\BlackListXamarin\EL.BlackList\EL.BlackList.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
 F:\Projects2022\BlackList\BlackListXamarin\EL.BlackList\EL.BlackList.Android\obj\Debug\120\res\drawable\icon2.png
 F:\Projects2022\BlackList\BlackListXamarin\EL.BlackList\EL.BlackList.Android\obj\Debug\120\res\drawable\car1.png
+F:\Projects2022\BlackList\BlackListXamarin\EL.BlackList\EL.BlackList.Android\obj\Debug\120\res\drawable\preloader.gif
+F:\Projects2022\BlackList\BlackListXamarin\EL.BlackList\EL.BlackList.Android\obj\Debug\120\res\drawable\dl1.png
+F:\Projects2022\BlackList\BlackListXamarin\EL.BlackList\EL.BlackList.Android\obj\Debug\120\res\drawable\dl2.png
+F:\Projects2022\BlackList\BlackListXamarin\EL.BlackList\EL.BlackList.Android\obj\Debug\120\res\drawable\icon_calendar.png
+F:\Projects2022\BlackList\BlackListXamarin\EL.BlackList\EL.BlackList.Android\obj\Debug\120\res\drawable\innblack.png
+F:\Projects2022\BlackList\BlackListXamarin\EL.BlackList\EL.BlackList.Android\obj\Debug\120\res\drawable\innwhite.png

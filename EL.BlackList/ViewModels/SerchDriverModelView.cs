@@ -17,6 +17,7 @@ namespace EL.BlackList.ViewModels
         public string LastName { get; set; }
         public string SecondName { get; set; }
         public string Birthday { get; set; }
+        public bool imgload { get; set; } = false;
         public Command SerchCommand { get; }
         public SerchDriverModelView()
         {
@@ -29,6 +30,7 @@ namespace EL.BlackList.ViewModels
                 await Shell.Current.DisplayAlert("Error", "Driver not found! " + Birthday, "OK");
             else
             {
+                imgload = true;
                 UserBase users = await App.BlackListDB.GetUserBaseAsync();
                 string token = "Bearer " + users.Token;
                 string named = $"{FirstName} {LastName} {SecondName}";

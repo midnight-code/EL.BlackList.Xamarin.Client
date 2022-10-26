@@ -63,5 +63,14 @@ namespace EL.BlackList
                     await Shell.Current.DisplayAlert("Error", "Error pin code", "OK");
             }
         }
+
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            UserBase users = await App.BlackListDB.GetUserBaseAsync();
+            if (users == null && users.DateEnd < DateTime.Now && string.IsNullOrWhiteSpace(users.UserID))
+                await Shell.Current.GoToAsync($"{nameof(LoginPage)}");
+        }
     }
 }

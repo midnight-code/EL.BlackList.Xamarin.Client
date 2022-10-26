@@ -7,27 +7,41 @@
        Title="Black List"
        x:Class="EL.BlackList.AppShell"
        Shell.TabBarIsVisible="False"
-       Shell.BackgroundColor="Black">
+       FlyoutBackgroundColor="Black"
+       DisabledColor="Yellow"
+       UnselectedColor="IndianRed">
 
-    
-    
     <ShellContent
         Title="Login out"
-        ContentTemplate="{DataTemplate local:StartPage}"
+        ContentTemplate="{DataTemplate local:PinPage}"
         FlyoutItemIsVisible="False"
         Shell.FlyoutBehavior="Disabled"
         Route="MainPage" />
 
-    <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Home" Icon="{x:Static model:Icons.Dashboard}" ContentTemplate="{DataTemplate views:HomePage}"/>
-        <ShellContent Title="Add Driver" Icon="{x:Static model:Icons.DriverIco}" ContentTemplate="{DataTemplate views:AddDriverPage}"/>
-        <ShellContent Title="Contact" Icon="{x:Static model:Icons.ContactUs}" ContentTemplate="{DataTemplate views:ContactPage}"/>
-        <ShellContent Title="About" Icon="{x:Static model:Icons.People}" ContentTemplate="{DataTemplate views:AboutPage}"/>
+    <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems" >
+        <Shell.FlyoutBackdrop>
+            <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,1">
+                <GradientStop Color="#505000"
+                         Offset="0.1" />
+                <GradientStop Color="#683351"
+                         Offset="0.6" />
+                <GradientStop Color="#7109AA"
+                         Offset="1.0" />
+            </LinearGradientBrush>
+        </Shell.FlyoutBackdrop>
+        <Shell.BackgroundColor>
+            <Color>#000</Color>
+        </Shell.BackgroundColor>
+        <ShellContent Title="Главная" Icon="{x:Static model:Icons.Dashboard}" ContentTemplate="{DataTemplate views:HomePage}"/>
+        <ShellContent Title="Добавить запись" Icon="{x:Static model:Icons.DriverIco}" ContentTemplate="{DataTemplate views:AddDriverPage}"/>
+        <ShellContent Title="Контакты" Icon="{x:Static model:Icons.ContactUs}" ContentTemplate="{DataTemplate views:ContactPage}"/>
+        <ShellContent Title="О программе" Icon="{x:Static model:Icons.People}" ContentTemplate="{DataTemplate views:AboutPage}"/>
 
     </FlyoutItem>
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
-            <Button Text="Log out" Command="{Binding logOutCommand}" BackgroundColor="LightGreen"/>
+            <Button Text="Выход" Command="{Binding logOutCommand}" BackgroundColor="LightGreen"/>
         </StackLayout>
     </Shell.FlyoutFooter>
 

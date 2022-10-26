@@ -27,6 +27,9 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
+            <Style TargetType="Shell">
+                <Setter Property="FlyoutBackgroundColor" Value="Black"></Setter>
+            </Style>
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="#FFFF00" />
             </Style>
